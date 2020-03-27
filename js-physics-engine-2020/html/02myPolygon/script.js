@@ -11,13 +11,19 @@ canvas.height = height;
 
 let points = [];
 
-for(let i=0; i<3; i++){
-    let x = getRandomInt(0,width);
-    let y = getRandomInt(0,width);
-    let myPoint = new Point (x,y,5,"black",i);
-    points.push(myPoint);
-
+for (let i = 0; i<5;i++){
+  let x = getRandomInt(0, width);
+  let y = getRandomInt(0, height);
+  let color = "rgba("+getRandomInt(0,255)+","+getRandomInt(0,255)+","+getRandomInt(0,255)+","+getRandomInt(1,10)/10+")";
+  let myPoint = new Polypoint(x,y,20,color,);
+  points.push(myPoint);
+}
+console.log(points);
+function draw() {
+  context.clearRect(0,0,width,height);
+  for (let i = 0; i<points.length;i++){
+    points[i].draw(context)
+  }
 }
 
-let myPolygon = new Polygon(points);
-myPolygon.draw(context)
+setInterval(draw, 10);
