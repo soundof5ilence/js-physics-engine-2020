@@ -18,6 +18,8 @@ for (let i = 0; i<5;i++){
   let myPoint = new Polypoint(x,y,20,color,);
   points.push(myPoint);
 }
+
+
 console.log(points);
 function draw() {
   context.clearRect(0,0,width,height);
@@ -26,4 +28,3 @@ function draw() {
   }
 }
 
-setInterval(draw, 10);
