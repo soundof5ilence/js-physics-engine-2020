@@ -20,8 +20,26 @@ class Point {
 
    //if(draggable) {this.drag();}
    if(this.draggable) this.Drag();
+    
+
+    
+   
+    
 
   }
+
+  get vPos()
+  {
+   return new Vector2d(this.x,this.y);
+  }
+
+  set vPos(vector)
+  { 
+   this.x = vector.dx;
+   this.y = vector.dy;
+  }
+
+
 draw(context){
 		// hier komt de constructor
     context.beginPath();
